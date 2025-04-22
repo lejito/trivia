@@ -33,6 +33,13 @@ public class Game {
 	public boolean isPlayable() {
 		return (howManyPlayers() >= 2);
 	}
+	public int getPlayerPlace(int playerIndex) {
+		return places[playerIndex];
+	}
+	
+	public int getPlayerCoins(int playerIndex) {
+		return purses[playerIndex];
+	}
 
 	public boolean add(String playerName) {
 		
