@@ -41,9 +41,7 @@ public class Game {
 		return purses[playerIndex];
 	}
 
-	public boolean add(String playerName) {
-		
-		
+	public boolean add(String playerName) {	
 	    players.add(playerName);
 	    places[howManyPlayers()] = 0;
 	    purses[howManyPlayers()] = 0;
