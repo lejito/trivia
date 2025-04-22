@@ -127,13 +127,26 @@ class GameTest {
                 currentPlayer = 0; // Switch to Player 1
             }
         }
-        while(notAWinner); 
-
-        assertFalse(notAWinner); // Se espera que el juego tenga ganadores
         
+        while(notAWinner); 
+        assertFalse(notAWinner); // Se espera que el juego tenga ganadores
         // el primer jugador gana el juego
         assertEquals(6, game.getPlayerCoins(0)); // Player 1 earns 6 coins
     
+    }
+
+    @Test
+    void testWrongAnswer() {
+        game.add("Player 1");
+        game.add("Player 2");
+
+        game.roll(2);
+        assertTrue(game.wrongAnswer()); // Player 1 answers wrongly
+        assertEquals(0, game.getPlayerCoins(0)); // Player 1 earns 0 coins
+
+        game.roll(3);
+        assertTrue(game.wrongAnswer()); // Player 2 answers wrongly
+        assertEquals(0, game.getPlayerCoins(1)); // Player 2 earns 0 coins
     }
     
 }
